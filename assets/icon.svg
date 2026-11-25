@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="forestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B4332"/>
+      <stop offset="100%" stop-color="#2D6A4F"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Shield -->
+  <rect width="512" height="512" rx="100" fill="url(#forestGrad)"/>
+  <!-- Compass / Cross / Fleur-de-lis Motif -->
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#52B788" stroke-width="12" stroke-dasharray="8 8"/>
+  <!-- First Aid Red Cross in Center -->
+  <rect x="226" y="146" width="60" height="220" rx="16" fill="#FFFFFF"/>
+  <rect x="146" y="226" width="220" height="60" rx="16" fill="#FFFFFF"/>
+  <rect x="236" y="156" width="40" height="200" rx="10" fill="#DC2626"/>
+  <rect x="156" y="236" width="200" height="40" rx="10" fill="#DC2626"/>
+  <!-- Scout Star Emblems -->
+  <polygon points="256,70 266,95 292,95 271,110 279,135 256,120 233,135 241,110 220,95 246,95" fill="url(#goldGrad)"/>
+</svg>

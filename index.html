@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>ScoutCare PH — Philippine Boy Scout Camping & First Aid</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#0D3B2E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+  <!-- Desktop Host Header (Hidden on real mobile devices) -->
+  <header class="app-host-header">
+    <div class="host-branding">
+      <span class="scout-fleur-icon">⚜️</span>
+      <span class="host-title"><strong>ScoutCare PH</strong></span>
+      <span class="host-badge">Laging Handa</span>
+    </div>
+    <div class="host-controls">
+      <button class="btn btn-sm btn-outline-light" id="toggle-frame-btn" onclick="App.toggleMobileFrame()">
+        🖥️ Fullscreen View
+      </button>
+      <button class="btn btn-sm btn-emergency-top" onclick="App.navigateTo('emergency')">
+        🚨 SOS 911 / 143
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Viewport -->
+  <main class="device-viewport-outer">
+    <div class="device-frame mobile-frame-mode" id="device-frame-wrapper">
+
+      <!-- Simulated Phone Status Bar (Desktop preview only) -->
+      <div class="phone-status-bar">
+        <span class="phone-time" id="phone-clock">08:00</span>
+        <div class="phone-dynamic-notch">
+          <span class="notch-camera"></span>
+          <span class="notch-speaker"></span>
+        </div>
+        <div class="phone-status-icons">
+          <span>🇵🇭</span>
+          <span>📶</span>
+          <span>🔋</span>
+        </div>
+      </div>
+
+      <!-- In-App Header -->
+      <nav class="phone-app-header">
+        <div class="header-left" onclick="App.navigateTo('dashboard')">
+          <div class="scout-crest-mini">⚜️</div>
+          <div class="header-text-group">
+            <span class="app-name">ScoutCare PH</span>
+            <span class="app-motto">Laging Handa • BSP</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <button class="btn-lang-header" id="lang-toggle-btn" onclick="I18n.toggleLanguage()" title="Switch English / Filipino">
+            🌐 ENG
+          </button>
+          <button class="btn-sos-header" onclick="App.navigateTo('emergency')" title="Emergency SOS">
+            🚨 SOS
+          </button>
+        </div>
+      </nav>
+
+      <!-- Scrollable App Content -->
+      <div class="phone-scroll-content" id="phone-scroll-content">
+
+        <!-- Welcome & Onboarding -->
+        <section class="view-screen" id="welcome-view">
+          <div class="onboarding-hero glass-card">
+            <div class="hero-emblem">⚜️</div>
+            <h1>Mabuhay! Welcome to ScoutCare PH</h1>
+            <p class="hero-tagline">"Laging Handa" — Philippine Boy Scout Camping Preparation, First-Aid Kit, & Medicine Safety.</p>
+          </div>
+
+          <div class="glass-card onboarding-features">
+            <div class="feature-item">
+              <span class="feat-icon">⛺</span>
+              <div>
+                <strong>Camping Prep & To-Do List:</strong>
+                <p>Track equipment, food, water, PAGASA signals, and Heat Index before every campout.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feat-icon">🩹</span>
+              <div>
+                <strong>Philippine First-Aid Kit:</strong>
+                <p>Betadine, Hydrite ORS, DEET, expiration alerts, and automated shopping list.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feat-icon">💊</span>
+              <div>
+                <strong>Safe Medicine Reminders:</strong>
+                <p>Physician-prescribed alerts with strict overdose & double-dose safety warnings.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feat-icon">🚨</span>
+              <div>
+                <strong>Philippine Emergency SOS:</strong>
+                <p>One-tap 911, Red Cross 143, DOH 1555, NDRRMC 8911, GPS, and 3-blast whistle.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="onboarding-actions">
+            <button class="btn btn-primary btn-lg" onclick="App.navigateTo('dashboard')">
+              Open Camping Prep Dashboard →
+            </button>
+            <button class="btn btn-outline" onclick="App.navigateTo('roles')">
+              Select BSP Role (Scout / Guardian / Leader)
+            </button>
+          </div>
+        </section>
+
+        <!-- Role Selection -->
+        <section class="view-screen" id="roles-view">
+          <div class="screen-header">
+            <div class="screen-title-group">
+              <span class="badge-tag">Account Roles</span>
+              <h1 class="screen-title">Select Your BSP Role</h1>
+            </div>
+          </div>
+          <div class="role-cards-grid">
+            <div class="role-select-card glass-card" onclick="App.switchUserAccount('scout-1')">
+              <div class="role-card-avatar">⚜️</div>
+              <div class="role-card-info">
+                <h4>Juan dela Cruz</h4>
+                <span class="role-badge-tag">BOY SCOUT</span>
+                <p class="text-muted">Second Class Scout • Troop 101-BSP, QC Council</p>
+              </div>
+            </div>
+            <div class="role-select-card glass-card" onclick="App.switchUserAccount('guardian-1')">
+              <div class="role-card-avatar">🛡️</div>
+              <div class="role-card-info">
+                <h4>Maria dela Cruz</h4>
+                <span class="role-badge-tag">PARENT / GUARDIAN</span>
+                <p class="text-muted">Supervise medicines, consent & kit readiness</p>
+              </div>
+            </div>
+            <div class="role-select-card glass-card" onclick="App.switchUserAccount('leader-1')">
+              <div class="role-card-avatar">🧭</div>
+              <div class="role-card-info">
+                <h4>Kuya Roel Santos</h4>
+                <span class="role-badge-tag">SCOUTMASTER</span>
+                <p class="text-muted">Troop safety clearances, PAGASA & incident logs</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Core Views -->
+        <section class="view-screen active" id="dashboard-view"></section>
+        <section class="view-screen" id="kit-inventory-view"></section>
+        <section class="view-screen" id="first-aid-view"></section>
+        <section class="view-screen" id="medicines-view"></section>
+        <section class="view-screen" id="emergency-view"></section>
+        <section class="view-screen" id="camping-view"></section>
+        <section class="view-screen" id="todo-view"></section>
+        <section class="view-screen" id="essentials-view"></section>
+        <section class="view-screen" id="videos-view"></section>
+        <section class="view-screen" id="incidents-view"></section>
+        <section class="view-screen" id="profile-view"></section>
+
+      </div>
+
+      <!-- Persistent Bottom Navigation Bar -->
+      <nav class="bottom-nav-bar">
+        <button class="bottom-nav-item active" data-nav="home" onclick="App.navigateTo('dashboard')">
+          <span class="nav-icon">🏠</span>
+          <span class="nav-label" id="nav-lbl-home">Home</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="firstaid" onclick="App.navigateTo('firstaid')">
+          <span class="nav-icon">📖</span>
+          <span class="nav-label" id="nav-lbl-firstaid">First Aid</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="kit" onclick="App.navigateTo('kit')">
+          <span class="nav-icon">🎒</span>
+          <span class="nav-label" id="nav-lbl-kit">Kit</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="medicines" onclick="App.navigateTo('medicines')">
+          <span class="nav-icon">💊</span>
+          <span class="nav-label" id="nav-lbl-medicines">Medicines</span>
+        </button>
+        <button class="bottom-nav-item" data-nav="profile" onclick="App.navigateTo('profile')">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label" id="nav-lbl-profile">Profile</span>
+        </button>
+      </nav>
+    </div>
+  </main>
+
+  <!-- Emergency Flashlight Strobe Overlay -->
+  <div id="strobe-screen-overlay" class="strobe-overlay" onclick="EmergencyVM.toggleStrobe()">
+    <div class="strobe-center-banner">
+      <h1>🚨 SOS DISTRESS STROBE ACTIVE 🚨</h1>
+      <p>Tap screen anywhere to stop</p>
+    </div>
+  </div>
+
+  <!-- Modal & Toast Containers -->
+  <div id="modal-container"></div>
+  <div id="toast-container" class="toast-stack"></div>
+
+  <!-- MVVM Architecture Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/viewmodels/DashboardVM.js"></script>
+  <script src="js/viewmodels/KitVM.js"></script>
+  <script src="js/viewmodels/FirstAidVM.js"></script>
+  <script src="js/viewmodels/MedicineVM.js"></script>
+  <script src="js/viewmodels/EmergencyVM.js"></script>
+  <script src="js/viewmodels/CampingVM.js"></script>
+  <script src="js/viewmodels/TodoVM.js"></script>
+  <script src="js/viewmodels/EssentialsVM.js"></script>
+  <script src="js/viewmodels/LearningVM.js"></script>
+  <script src="js/viewmodels/IncidentsVM.js"></script>
+  <script src="js/viewmodels/ProfileVM.js"></script>
+  <script src="js/tests.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

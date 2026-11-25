@@ -1,0 +1,26 @@
+{
+  "name": "ScoutCare PH — Boy Scout Camping & First Aid",
+  "short_name": "ScoutCare PH",
+  "description": "Philippine Boy Scout Camping Preparation, First-Aid Kit Inventory, Medicine Safety Reminders & Tropical Emergency Guide.",
+  "lang": "en-PH",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0D3B2E",
+  "theme_color": "#0D3B2E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
