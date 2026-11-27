@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>ScoutCare PH — Philippine Boy Scout Camping & First Aid</title>
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="styles.css">
   <meta name="theme-color" content="#0D3B2E">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -155,6 +156,7 @@
 
         <!-- Core Views -->
         <section class="view-screen active" id="dashboard-view"></section>
+        <section class="view-screen" id="expedition-view"></section>
         <section class="view-screen" id="kit-inventory-view"></section>
         <section class="view-screen" id="first-aid-view"></section>
         <section class="view-screen" id="medicines-view"></section>
@@ -206,11 +208,14 @@
   <div id="modal-container"></div>
   <div id="toast-container" class="toast-stack"></div>
 
-  <!-- MVVM Architecture Scripts -->
+  <!-- Leaflet & MVVM Architecture Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/state.js"></script>
+  <script src="js/data/visayasDirectory.js"></script>
   <script src="js/viewmodels/DashboardVM.js"></script>
+  <script src="js/viewmodels/ExpeditionMapVM.js"></script>
   <script src="js/viewmodels/KitVM.js"></script>
   <script src="js/viewmodels/FirstAidVM.js"></script>
   <script src="js/viewmodels/MedicineVM.js"></script>

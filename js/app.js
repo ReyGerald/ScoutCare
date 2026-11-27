@@ -73,6 +73,7 @@ const App = {
 
     // Initialize all ViewModels
     window.DashboardVM.init();
+    if (window.ExpeditionMapVM) window.ExpeditionMapVM.init();
     window.KitVM.init();
     window.FirstAidVM.init();
     window.MedicineVM.init();
@@ -156,6 +157,9 @@ const App = {
       'roles': 'roles-view',
       'dashboard': 'dashboard-view',
       'leader-dashboard': 'dashboard-view',
+      'expedition': 'expedition-view',
+      'map': 'expedition-view',
+      'visayas': 'expedition-view',
       'kit': 'kit-inventory-view',
       'kit-alerts': 'kit-inventory-view',
       'firstaid': 'first-aid-view',
@@ -183,6 +187,7 @@ const App = {
     if (viewport) viewport.scrollTop = 0;
 
     if (viewId === 'dashboard' || viewId === 'leader-dashboard') window.DashboardVM.render();
+    if (['expedition', 'map', 'visayas'].includes(viewId)) window.ExpeditionMapVM.render();
     if (viewId === 'kit' || viewId === 'kit-alerts') window.KitVM.render();
     if (viewId === 'firstaid' || viewId === 'firstaid-quiz') window.FirstAidVM.render();
     if (viewId.startsWith('medicine')) window.MedicineVM.render();

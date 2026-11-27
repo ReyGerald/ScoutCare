@@ -12,6 +12,7 @@ const TestSuite = {
     this.testRoleBasedPrivacyEnforcement();
     this.testTodoAndEssentials();
     this.testBilingualI18n();
+    this.testVisayasExpeditionDirectory();
 
     const passed = this.results.filter(r => r.passed).length;
     const total = this.results.length;
@@ -96,6 +97,28 @@ const TestSuite = {
     const filLabel = window.I18n.t('first_aid_kit');
     window.scoutState.updateSettings({ language: origLang });
     this.assert('i18n: Filipino translation resolves accurately', filLabel === 'Kit ng Unang Lunas', `Got ${filLabel}`);
+  },
+
+  testVisayasExpeditionDirectory() {
+    const list = window.VisayasDirectory.getAllDestinations();
+    const venues = window.VisayasDirectory.getAllCandidateVenues();
+    this.assert('Visayas: Exactly 48 main destinations loaded', list.length === 48, `Count=${list.length}`);
+    this.assert('Visayas: Exactly 30 candidate jamboree venues loaded', venues.length === 30, `Count=${venues.length}`);
+
+    const provCounts = {};
+    list.forEach(d => { provCounts[d.province] = (provCounts[d.province] || 0) + 1; });
+    const expectedProvs = ["Cebu", "Bohol", "Antique", "Negros Oriental", "Siquijor", "Samar"];
+    const all8 = expectedProvs.every(p => provCounts[p] === 8);
+    this.assert('Visayas: Exactly 8 destinations per province (6 provinces)', all8, JSON.stringify(provCounts));
+
+    const allHaveHosp = list.every(d => d.medical && d.medical.nearestHospital && d.medical.distanceKm > 0);
+    this.assert('Visayas: 100% of destinations have verified hospital & distance', allHaveHosp);
+
+    const allHaveContact = list.every(d => d.medical && d.medical.mdrrmoContact);
+    this.assert('Visayas: 100% of destinations have emergency MDRRMO contacts', allHaveContact);
+
+    const b = window.ExpeditionMapVM.calculateTransportBudget();
+    this.assert('Transport Calculator: Produces valid budget and cost per scout', b.grandTotal > 0 && b.costPerScout > 0, `Total=${b.grandTotal}`);
   },
 
   showTestModal() {

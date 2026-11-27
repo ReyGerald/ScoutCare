@@ -49,7 +49,20 @@ const DashboardVM = {
         </div>
         <div class="campout-actions-row">
           <button class="btn btn-sm btn-outline" onclick="DashboardVM.openEditCampoutModal()">✏️ Set Camp Date</button>
+          <button class="btn btn-sm btn-outline-light" onclick="App.navigateTo('expedition')">🗺️ Select Campsite (Visayas Map)</button>
           <button class="btn btn-sm btn-outline" onclick="App.navigateTo('camping')">⛈️ PAGASA Signal: ${campout.pagasaSignal > 0 ? 'Signal #' + campout.pagasaSignal : 'Normal'}</button>
+        </div>
+      </div>
+
+      <!-- Visayas Expedition Quick Access Banner -->
+      <div class="glass-card expedition-quick-banner" onclick="App.navigateTo('expedition')" style="cursor: pointer; border-left: 4px solid #10b981; margin-bottom: 14px;">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div>
+            <span class="badge-tag" style="background:rgba(16,185,129,0.25); color:#6EE7B7;">⚜️ Visayas Camping Directory</span>
+            <h4 style="margin:4px 0 2px 0;">🗺️ Visayas Scout Expedition Map</h4>
+            <p class="text-muted" style="margin:0; font-size:12px;">Browse 48 main campsites & 30 Jamboree venues across Cebu, Bohol, Antique, Negros, Siquijor & Samar.</p>
+          </div>
+          <span style="font-size: 24px; margin-left: 8px;">➔</span>
         </div>
       </div>
 

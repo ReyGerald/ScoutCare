@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scoutcare-ph-v2';
+const CACHE_NAME = 'scoutcare-ph-v3';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,9 +7,11 @@ const ASSETS_TO_CACHE = [
   './js/storage.js',
   './js/i18n.js',
   './js/state.js',
+  './js/data/visayasDirectory.js',
   './js/app.js',
   './js/tests.js',
   './js/viewmodels/DashboardVM.js',
+  './js/viewmodels/ExpeditionMapVM.js',
   './js/viewmodels/KitVM.js',
   './js/viewmodels/FirstAidVM.js',
   './js/viewmodels/MedicineVM.js',
