@@ -40,7 +40,16 @@
 - **10 Offline Lessons & Quizzes**: Cuts, Severe Bleeding, Burns, Nosebleeds, Sprains/Fractures, Heatstroke, Hypothermia, Choking, Bites/Stings/Rabies, and CPR/AED Awareness.
 - **YouTube Training Library**: Curated video cards with watched tracking and a clear disclaimer that CPR must be practiced hands-on with a qualified instructor using a CPR manikin.
 
-### 7. 🌐 Bilingual (English / Filipino) & Mobile-First
+### 7. 🗺️ Visayas Scout Camping & Jamboree Expedition Planner
+- **48 Main Destinations Across 6 Provinces**: Cebu (8), Bohol (8), Antique (8), Negros Oriental (8), Siquijor (8), and Samar (8).
+- **30 Candidate Scout Jamboree Venues**: 15 Bohol, 8 Cebu, 7 Other Visayas evaluated for 500 to 5,000+ Scouts.
+- **100% Offline Graceful Fallback**: Interactive vector SVG map and directory book that operate seamlessly with zero cell service in remote mountain valleys.
+- **One-Tap "Set as My Upcoming Campout"**: Instantly synchronizes destination, municipal hazard alerts, and tailored checklists to the Camping Prep Dashboard.
+- **Philippine Permits & Clearances Guide**: Clearances [A] BSP/GSP Council, [B] LGU & DepEd, [C] DENR/PAMB, and [D] Landowners.
+- **Medical Evacuation Directory**: Nearest Level 1/2/3 hospital distance (km) and driving time, plus MDRRMO contacts.
+- **Transportation Budget Calculator**: Ceres bus, 14-seater van convoys, equipment elf trucks, and RoRo ferry expenses.
+
+### 8. 🌐 Bilingual (English / Filipino) & Mobile-First
 - **ENG ↔ FIL Toggle**: Instant switching between English and Filipino/Tagalog across key navigation and safety warnings.
 - **Android Mobile Compatibility**: Native full-viewport layout on phones (`320px–520px`), `44px+` touch targets, `15px+` readable typography, and zero horizontal overflow.
 
@@ -93,21 +102,18 @@ ScoutCare/
 
 ## 🐙 GitHub & ▲ Vercel Deployment
 
-### Push to a New GitHub Repository
+### Push Updates to GitHub
 ```bash
 cd c:\Users\Gerald\Desktop\ScoutCare
-git init
 git add .
-git commit -m "feat: ScoutCare PH Glassmorphism MVVM update"
-git branch -M main
-git remote add origin https://github.com/<YOUR_USERNAME>/scoutcare-ph.git
-git push -u origin main
+git commit -m "feat: Visayas Scout Expedition Map & 78 Destinations Planner"
+git push origin main
 ```
 
 ### Deploy to Vercel
-1. Go to [vercel.com](https://vercel.com) → **Add New Project** → Import your `scoutcare-ph` GitHub repository.
-2. **Framework Preset**: `Other` (Static HTML/CSS/JS — no build command needed).
-3. Click **Deploy**. `vercel.json` is already configured for SPA routing and Service Worker headers.
+1. Go to [vercel.com](https://vercel.com) → **Add New Project** → Import your `ReyGerald/ScoutCare` repository.
+2. **Framework Preset**: `Other` (Pure HTML/CSS/JS — no build command needed).
+3. Click **Deploy**. Vercel will host your website publicly with free SSL and PWA offline support!
 
 ---
 
